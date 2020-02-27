@@ -35,9 +35,34 @@ body {
     .third-service { grid-area: third-service;}
     .other-links { grid-area: other-links;}
     .copyright-info { grid-area: copyright-info;}
+}
 
+@media screen and ( min-width: 1024px ) {
 
-
-
+    body {
+        grid-template-columns: calc( 100% / 3 ) calc( ( 100% / 2 ) / 3 ) calc( ( 100% / 2 ) / 3 ) calc( 100% / 3 );
+        grid-template-rows: 35vw 35vw 35vw;
+        grid-template-areas:
+            "hero hero hero hero"
+            "first-service second-service second-service third-service"
+            "other-links other-links copyright-info copyright-info" ;
+    }
 
 }
+
+/* Let's try positioning... */
+    .first-service,
+    .second-service,
+    .third-service {
+        width: 50%;
+        height: 50%;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .second-service {
+        width: 75%;
+        height: 75%;
+        justify-self: center;
+        align-self: center;
+    }
