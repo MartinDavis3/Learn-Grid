@@ -22,7 +22,7 @@
 
 #navigation {
     grid-column-start: 2;
-    grid-column-end: 4;   /* (or, use span 3 in place of 4. Span - how many cells to take up) */
+    grid-column-end: span 3;   /* Or, use 5 in place of span 3 - NB. end is the column BEFORE WHICH it ends, not the column it ends on */
     grid-row-start: 1;
     grid-row-end: 1;
 }
@@ -44,7 +44,16 @@
     grid-row: 3;
 }
 
+/* We don't have to specify for content 1 and 2 because by default they take up 1 cell/column. */
+
 #content-2 {
     grid-column: 3 / span 2;
+}
+
+#big-content-1,
+#big-content-2,
+#links {
+    grid-column: span 2;
+    /* By default, they take up one cell/row, so we did not specify row! */
 }
 
