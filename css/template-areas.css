@@ -1,0 +1,43 @@
+* {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30vh 30vh 30vh 30vh 30vh 30vh;
+}
+
+.hero {background: red;}
+.first-service {background: blue;}
+.second-service {background: green;}
+.third-service {background: magenta;}
+.other-links {background: cyan;}
+.copyright-info {background: yellow;}
+
+@media screen and ( min-width: 500px ) {
+
+    body {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 30vh 30vh 30vh 30vh;
+        grid-template-areas:
+            "hero hero"                         /* Row one: hero spans two columns. */
+            "first-service second-service"      /* Row two: each is one cell. */
+            "third-service third-service"       /* etc. */
+            "other-links copyright-info";
+    }
+
+    .hero { grid-area: hero;}
+    .first-service { grid-area: first-service;}     /* the grid-area parameter corresponds to the named grid-template-areas above (not to the class name, we just named them that way for convenience). */
+    .second-service { grid-area: second-service;}
+    .third-service { grid-area: third-service;}
+    .other-links { grid-area: other-links;}
+    .copyright-info { grid-area: copyright-info;}
+
+
+
+
+
+}
